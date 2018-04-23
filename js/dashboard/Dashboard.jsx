@@ -15,8 +15,16 @@ export const styles = StyleSheet.create({
     color: color.slate,
   },
   headerText: {
-    color: color.gold,
+    color: color.yellow,
     fontSize: 19,
+    fontWeight: 'bold',
+  },
+  button: {
+    backgroundColor: color.slate,
+    padding: 10,
+    width: 200,
+    borderRadius: 2,
+    alignItems: 'center',
   },
 });
 
@@ -36,7 +44,7 @@ export default class Dashboard extends React.Component {
         <View style={styles.container}>
           <Text style={styles.headerText}>{title}</Text>
           <Text style={styles.text}>I read things REAL real fast</Text>
-          <TouchableHighlight onPress={() => setParentState({ currentPage: 'Browser' })}>
+          <TouchableHighlight style={styles.button} onPress={() => setParentState({ currentPage: 'Browser' })}>
             <Text style={styles.headerText}>Browse</Text>
           </TouchableHighlight>
         </View>
