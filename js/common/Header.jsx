@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { color } from '../lib/styles';
+import { color, font } from '../lib/styles';
 import { Logo } from '.';
 
 const styles = StyleSheet.create({
@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica Neue',
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: 13,
+    fontSize: font.size.small,
   },
   titleText: {
     fontFamily: 'Helvetica Neue',
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: font.size.large,
   },
 });
 
