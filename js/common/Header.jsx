@@ -5,7 +5,6 @@ import { Logo } from '.';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     backgroundColor: color.white,
     alignItems: 'flex-end',

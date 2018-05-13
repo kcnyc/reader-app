@@ -6,7 +6,6 @@ import { color, font } from '../lib/styles';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
     paddingLeft: 10,
     paddingRight: 10,
     flexDirection: 'row',
@@ -56,7 +55,3 @@ export default class Search extends React.Component {
     );
   }
 }
-
-Search.propTypes = {
-  setParentState: PropTypes.func.isRequired,
-};

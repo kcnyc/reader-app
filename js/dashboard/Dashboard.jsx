@@ -1,61 +1,63 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { Icon } from 'react-native-elements';
+import ActionItem from './Action-Item';
 import { color } from '../lib/styles';
 import { Header, Search } from '../common';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 9,
-    backgroundColor: color.white,
+    flex: 1,
     alignItems: 'flex-start',
     justifyContent: 'center',
   },
-  text: {
-    color: color.slate,
-  },
-  headerText: {
-    color: color.yellow,
-    fontSize: 19,
-    fontWeight: 'bold',
-  },
-  button: {
-    backgroundColor: color.slate,
-    padding: 10,
-    width: 200,
-    borderRadius: 2,
-    alignItems: 'center',
-  },
-  otherActions: {
-    flex: 1,
+  actionButtons: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    height: 250,
   },
 });
 
-export default class Dashboard extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = {
-      title: '[k]NOCKOUT',
-    };
-  }
-  render() {
-    const { setParentState } = this.props;
-    return (
-      <React.Fragment>
-        <Header />
-        <View style={styles.container}>
-          <Search />
-          <View style={styles.otherAcitons}>
-            <TouchableHighlight style={styles.button} onPress={() => setParentState({ currentPage: 'Browser' })}>
-              <Text style={styles.headerText}>Browse</Text>
-            </TouchableHighlight>
-          </View>
-        </View>
-      </React.Fragment>
-    );
-  }
-}
+const Dashboard = ({ setParentState }) => (
+  <React.Fragment>
+    <Header />
+    <View style={styles.container} />
+    <Search />
+    <View style={styles.container} />
+    <View style={styles.actionButtons}>
+      <ActionItem
+        text="Browse"
+        iconName="search"
+        onPress={() => setParentState({ currentPage: 'Browser' })}
+      />
+      <ActionItem
+        text="Daily Reading Plans"
+        iconName="date-range"
+        onPress={() => setParentState({ currentPage: 'Daily Reading Plans' })}
+      />
+      <ActionItem
+        text="Milestones"
+        iconName="terrain"
+        onPress={() => setParentState({ currentPage: 'Milestones' })}
+      />
+      <ActionItem
+        text="Guided Devotional"
+        iconName="map"
+        onPress={() => setParentState({ currentPage: 'Guided Devotional' })}
+      />
+      <ActionItem
+        text="Review Notes"
+        iconName="edit"
+        onPress={() => setParentState({ currentPage: 'Review Notes' })}
+      />
+    </View>
+    <View style={styles.container} />
+  </React.Fragment>
+);
 
 Dashboard.propTypes = {
   setParentState: PropTypes.func.isRequired,
 };
+
+export default Dashboard;

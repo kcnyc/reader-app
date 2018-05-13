@@ -23,7 +23,7 @@ export default class Main extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(this.setState.bind(this, { isLoading: false }), 800);
+    setTimeout(this.setState.bind(this, { isLoading: false }), 1800);
   }
 
   setParentState(newState) {
